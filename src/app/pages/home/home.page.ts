@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { $ } from 'protractor';
 import { Usuario } from 'src/app/model/Usuario';
-import { NivelEducacional } from '../../model/NivelEducacional';
+
 import { Persona } from '../../model/Persona';
 
 @Component({
@@ -17,16 +17,8 @@ export class HomePage implements OnInit {
 
   public usuario: Usuario;
 
-  public nivelesEducacionales: NivelEducacional[] = [
-    {id: 1, nombre: 'Básica Incompleta'},
-    {id: 2, nombre: 'Básica Completa'},
-    {id: 3, nombre: 'Media Incompleta'},
-    {id: 4, nombre: 'Media Completa'},
-    {id: 5, nombre: 'Superior Incompleta'},
-    {id: 6, nombre: 'Superior Completa'}
-  ];
 
-  public persona: Persona = new Persona();
+
 
   /*
     En el constructor del HomePage se ponen como parametros los siguientes objetos:
@@ -69,45 +61,9 @@ public ngOnInit() {
   // this.persona.fechaNacimiento = '1972-12-26';
 }
 
-public limpiarFormulario(): void {
-  /*
-    El método limpiar recorre cada uno de los campos de la propiedad persona,
-    de modo que la variable "key" va tomando el nombre de dichos campos (nombre,
-    apellido, etc.) y "value" adopta el valor que tiene en ese momento el
-    campo asociado a key.
-  */
-  for (const [key, value] of Object.entries(this.persona)) {
-    /*
-      Con la siguiente instrucción se cambia el valor de cada campo
-      de la propiedad persona, y como los controles gráficos están
-      asociados a dichos nombres de campos a través de ngModel, entonces
-      al limpiar el valor del campo, también se limpia el control gráfico.
-    */
-      Object.defineProperty(this.persona, key, {value: ''});
-    }
-  }
 
-  public mostrarDatosPersona(): void {
 
-    // Si el usuario no ingresa al menos el nombre o el apellido, se mostrará un error
-    if (this.persona.nombre.trim() === '' && this.persona.apellido === '') {
-      this.presentAlert('Datos personales', 'Para mostrar los datos de la persona, '
-        + 'al menos debe tener un valor para el nombre o el apellido.');
-      return;
-    }
 
-    // Mostrar un mensaje emergente con los datos de la persona
-    const mensaje =
-        '<br>Usuario: ' + this.usuario.nombreUsuario
-      + '<br>Nombre: ' + this.persona.nombre
-      + '<br>Apellido: ' + this.persona.apellido
-      + '<br>Educación: ' + this.persona.nivelEducacional.id + ' - '
-      + this.nivelesEducacionales.find(
-          n => n.id === this.persona.nivelEducacional.id).nombre
-      + '<br>Nacimiento: ' + this.persona.fechaNacimiento;
-
-    this.presentAlert('Datos personales', mensaje);
-  }
 
   // Este método sirve para mostrar el mensaje emergente
   public async presentAlert(titulo: string, mensaje: string) {
@@ -119,4 +75,16 @@ public limpiarFormulario(): void {
 
     await alert.present();
   }
+
+
+
+  tomarAsistencia(){
+
+    this.router.navigate(['/qrreader']);
+  }
+  cerrarSesion(){
+
+    this.router.navigate(['/login']);
+  }
+
 }

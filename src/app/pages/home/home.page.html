@@ -1,8 +1,8 @@
 <!-- Comienza el Header -->
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="black">
     <ion-title class="ion-text-left ion-text">
-      SkeletonAPP
+      <p *ngIf="usuario">Usuario: {{ usuario.nombreUsuario }}</p>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,58 +10,16 @@
 
 <!-- Comienza el Content -->
 <ion-content [fullscreen]="true" class="ion-padding-horizontal">
-  <ion-title class="ion-padding-top">
-    <ion-label>
-      <h1 class="ion-text-center">¡Bienvenido!</h1>
-      <!-- {{interpolacion}} 
-          Permite mostrar los datos desde el script a la visual
-          verificar el data en el home.page.ts
-        -->
-      <p *ngIf="usuario">Usuario: {{ usuario.nombreUsuario }}</p>
-    </ion-label>
-  </ion-title>
-  <b class="ion-text-center">
-    <h4>Información Adicional</h4>
-  </b>
-
-  <ion-item>
-    <ion-label position="ion-text-">Nombre</ion-label>
-    <ion-input type="text" [(ngModel)]="persona.nombre"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Apellido</ion-label>
-    <ion-input type="text" [(ngModel)]="persona.apellido"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Educación</ion-label>
-    <ion-select placeholder="Seleccione nivel" 
-        [(ngModel)]="persona.nivelEducacional.id">
-      <ion-select-option *ngFor="let nivelEducacional of nivelesEducacionales" 
-        [value]="nivelEducacional.id">
-          {{nivelEducacional.nombre}}
-      </ion-select-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Fecha Nacimiento</ion-label>
-    <ion-input type="date" 
-      [(ngModel)]="persona.fechaNacimiento">
-    </ion-input>
-  </ion-item>
-
   <ion-grid>
     <ion-row>
       <ion-col col-6>
-        <ion-button shape="block" (click)="limpiarFormulario()">
-          Limpiar
+        <ion-button shape="block" (click)="tomarAsistencia()">
+          Tomar Asistencia 
         </ion-button>
       </ion-col>
       <ion-col col-6>
-        <ion-button shape="block" (click)="mostrarDatosPersona()">
-          Mostrar
+        <ion-button shape="block" (click)="cerrarSesion()">
+          volver al login
         </ion-button>
       </ion-col>
     </ion-row>
@@ -71,10 +29,18 @@
 
 <!-- Comienza el Footer -->
 <ion-footer>
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-left ion-text">
-      App desarrollada por Cristián Gómez Vega
-    </ion-title>
+  <ion-toolbar color="black">
+    <ion-label>
+      <div style="display: flex; justify-content: center;"> 
+      <br>
+      <br>
+      <a routerLink="">Terminos y condiciones</a>
+      <br>
+      <br>
+      </div>
+    </ion-label>
+
+    
   </ion-toolbar>
 </ion-footer>
 <!-- Termina el Header -->
