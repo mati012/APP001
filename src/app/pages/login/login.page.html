@@ -2,25 +2,25 @@
 
     <div style="display: flex; justify-content: center;">
       <br>
-      <br>   
+      <br>
         <ion-label>
-          <h1>¡Bienvenido!</h1>
+          <h1> AsistenciaAPP</h1>
         </ion-label>
         <br>
         <br>
-        <br> 
-     </div> 
+        <br>
+     </div>
 
-     
+
         <ion-item>
           <ion-label position="floating">Usuario</ion-label>
-          
+
           <ion-input type="text" [(ngModel)]="usuario.nombreUsuario"></ion-input>
         </ion-item>
-        
+
         <ion-item>
           <ion-label position="floating" >Password</ion-label>
-         
+
           <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
         </ion-item>
         <br>
@@ -30,24 +30,24 @@
         <div style="display: flex; justify-content: center;">
         <ion-row>
           <ion-col size="12">
-            
+
             <ion-button shape="circle" fill="outline" size="large" style=" justify-content: center;" (click)="ingresar()">Ingresar</ion-button>
           </ion-col>
         </ion-row>
-         </div>      
+         </div>
         <br>
-      
+
     <ion-label>
-      <div style="display: flex; justify-content: center;"> 
+      <div style="display: flex; justify-content: center;">
         <br>
         <br>
         <a routerLink="">¿Olvido su contraseña?</a>
         <br>
         <br>
-      </div> 
+      </div>
     </ion-label>
       <ion-label>
-        <div style="display: flex; justify-content: center;"> 
+        <div style="display: flex; justify-content: center;">
         <br>
         <br>
         <a routerLink="">Registrarse</a>
@@ -55,13 +55,13 @@
         <br>
         </div>
       </ion-label>
-   
-  
+
+
 </ion-content>
 <ion-footer>
   <ion-toolbar>
     <ion-label>
-      <div style="display: flex; justify-content: center;"> 
+      <div style="display: flex; justify-content: center;">
       <br>
       <br>
       <a routerLink="">Terminos y condiciones</a>
@@ -70,6 +70,6 @@
       </div>
     </ion-label>
 
-    
+
   </ion-toolbar>
 </ion-footer>
