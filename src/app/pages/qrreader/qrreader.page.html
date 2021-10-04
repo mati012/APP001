@@ -1,27 +1,28 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>
-      Tomar Asistencia
+  <ion-toolbar color="background-color: #01162b;">
+    <ion-title  class="ion-text-center ion-text">
+      <p> Tomar Asistencia</p>
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
   <!-- Fallback for iOS PWA -->
   <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
 
   <!-- Trigger the file input -->
-  <ion-button expand="full" (click)="captureImage()">
+  <ion-button color=" #01162b" expand="full" (click)="captureImage()">
     <ion-icon slot="start" name="camera"></ion-icon>
     Capturar codigo QR
   </ion-button>
 
-  <ion-button expand="full" (click)="startScan()">
+  <ion-button color=" #01162b" expand="full" (click)="startScan()">
     <ion-icon slot="start" name="qr-scanner"></ion-icon>
     Escanear Codigo QR
   </ion-button>
 
-  <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
+  <ion-button color=" #01162b" expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
     <ion-icon slot="start" name="refresh"></ion-icon>
     Resetear
   </ion-button>

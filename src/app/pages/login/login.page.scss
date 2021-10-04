@@ -1,9 +1,41 @@
-ion-content{
-    --padding-top: 20px;
-    --padding-bottom: 20px;
-    --padding-end: 20px;
-    --padding-start: 20px;
-}
+
 ion-item{
     --padding-bottom: 10px;
 }
+ion-footer{
+background-color: #01162b;
+text-align: center;
+}
+ion-title {
+  text-align: center;
+
+}
+ion-content{
+
+  --ion-background--image :#111D12;
+
+
+
+}
+.background-image{
+  //--background: url(/src/assets/1.jpg) 0 0/100% 100% no-repeat;
+   //--background: #fff url('/src/assets/img/Palacio_Eguiguren,_Sede_padre_alonso.jpg') no-repeat center center / cover;;
+    --background: url('/src/assets/Palacio_Eguiguren\,_Sede_padre_alonso.jpg');
+    --background-repeat: no-repeat;
+    --background-size: cover;
+
+}
+ion-header {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-end: 20px;
+  --padding-start: 20px;
+  background-color: #01162b;
+}
+
+ ion-button {
+   color: white;
+  background-color:#f9b901 ;
+ }
+
+

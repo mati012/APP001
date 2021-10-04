@@ -4,11 +4,25 @@ import { Router, NavigationExtras } from '@angular/router';
 // La clase ToastController sirve para mostrar mensajes emergente que duran un par de segundos
 import { ToastController } from '@ionic/angular';
 import { Usuario } from 'src/app/model/Usuario';
-
+import {trigger, style, transition, animate, state} from '@angular/animations';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
+  animations:[
+    trigger('enterState',[
+      state('void',style({
+        transform: 'translateX(-100%)',
+        opacity:0
+      })),
+      transition(':enter',[
+        animate(2000, style({
+          transform : 'translateX(0)',
+          opacity:1
+        }))
+      ])
+    ])
+  ],
 })
 export class LoginPage implements OnInit {
   /*

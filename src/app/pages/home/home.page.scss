@@ -3,21 +3,36 @@ ion-header {
   --padding-bottom: 20px;
   --padding-end: 20px;
   --padding-start: 20px;
+  background-color: #01162b;
+
 }
 
 ion-title {
-  font-size: 0.8em;
+text-align: center;
+color: #01162b;
+
+
+}
+ion-button{
+ background-color:  #01162b;
+ color: white;
 }
 
-ion-header {
-  background-color: primary;
-}
 
 ion-label {
-  width: 130px;
+  width: 200px;
+  text-align: left;
+color: white;
+
 }
 
 ion-input, ion-select {
   color: gray;
   text-align: right;
 }
+
+ion-footer {
+
+  background-color: #01162b;
+}
+
